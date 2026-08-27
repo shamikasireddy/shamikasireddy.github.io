@@ -15,9 +15,14 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: #f7f7f5;
-            color: #222;
+            color: #242424;
             min-height: 100vh;
+
+            /* Colorful grey/yellow background */
+            background:
+                radial-gradient(circle at 10% 10%, #ffe680 0, transparent 28%),
+                radial-gradient(circle at 90% 80%, #ffd84d 0, transparent 25%),
+                #eeeeec;
         }
 
         .container {
@@ -28,89 +33,153 @@
 
         header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 55px;
         }
 
         h1 {
-            font-size: 48px;
-            font-weight: 700;
-            letter-spacing: -1.5px;
+            font-size: 52px;
+            font-weight: 800;
+            letter-spacing: -2px;
             margin-bottom: 12px;
         }
 
         .subtitle {
             font-size: 18px;
-            color: #777;
+            color: #666;
         }
 
+        /* App cards */
         .apps {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            display: flex;
+            flex-direction: column;
             gap: 24px;
         }
 
         .card {
-            background: white;
-            border: 1px solid #e5e5e5;
-            border-radius: 18px;
-            padding: 32px;
+            background: rgba(255, 255, 255, 0.88);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 24px;
+            padding: 36px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            backdrop-filter: blur(8px);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            transform: translateY(-5px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.10);
+        }
+
+        /* Featured Reellyy card */
+        .featured {
+            background: #242424;
+            color: white;
+            padding: 48px;
+        }
+
+        .featured .description {
+            color: #cfcfcf;
+        }
+
+        .featured .icon {
+            background: #ffd83d;
+            color: #242424;
         }
 
         .icon {
-            font-size: 42px;
-            margin-bottom: 20px;
+            width: 58px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #eeeeec;
+            border-radius: 16px;
+            font-size: 28px;
+            margin-bottom: 22px;
         }
 
         h2 {
-            font-size: 26px;
+            font-size: 32px;
             margin-bottom: 10px;
+            letter-spacing: -0.8px;
         }
 
         .description {
             color: #666;
             line-height: 1.6;
-            margin-bottom: 24px;
+            font-size: 17px;
+            max-width: 650px;
+            margin-bottom: 28px;
         }
 
         .button {
             display: inline-block;
-            background: #222;
-            color: white;
+            background: #ffd83d;
+            color: #242424;
             text-decoration: none;
-            padding: 11px 18px;
-            border-radius: 10px;
-            font-weight: 600;
-            transition: background 0.2s ease;
+            padding: 13px 21px;
+            border-radius: 12px;
+            font-weight: 700;
+            transition: transform 0.2s ease, background 0.2s ease;
         }
 
         .button:hover {
-            background: #444;
+            background: #ffe36b;
+            transform: translateY(-2px);
+        }
+
+        /* Wander */
+        .wander-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .wander-content {
+            flex: 1;
+        }
+
+        .wander-card h2 {
+            font-size: 28px;
+        }
+
+        .wander-card .description {
+            margin-bottom: 0;
+        }
+
+        .wander-card .button {
+            flex-shrink: 0;
         }
 
         footer {
             text-align: center;
-            margin-top: 60px;
-            color: #999;
+            margin-top: 55px;
+            color: #888;
             font-size: 14px;
         }
 
+        /* Mobile */
         @media (max-width: 650px) {
             .container {
-                padding: 60px 20px;
+                padding: 55px 20px;
             }
 
             h1 {
-                font-size: 38px;
+                font-size: 40px;
             }
 
-            .apps {
-                grid-template-columns: 1fr;
+            .featured {
+                padding: 32px;
+            }
+
+            .wander-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .wander-card .button {
+                margin-top: 5px;
             }
         }
     </style>
@@ -127,38 +196,52 @@
 
         <main class="apps">
 
-            <!-- Reellyy -->
-            <div class="card">
+            <!-- Featured App: Reellyy -->
+            <div class="card featured">
+
                 <div class="icon">🎬</div>
+
                 <h2>Reellyy</h2>
+
                 <p class="description">
                     A streaming service optimizer that helps you find the best
                     way to watch the movies and shows you want.
                 </p>
 
-                <a class="button" href="https://shamikasireddy.github.io/reellyy/">
+                <a class="button"
+                   href="https://shamikasireddy.github.io/reellyy/">
                     Try Reellyy →
                 </a>
+
             </div>
 
             <!-- Wander -->
-            <div class="card">
-                <div class="icon">🔎</div>
-                <h2>Wander</h2>
-                <p class="description">
-                    A personalized word search game designed around the words
-                    and topics you enjoy.
-                </p>
+            <div class="card wander-card">
 
-                <a class="button" href="https://shamikasireddy.github.io/wander/">
+                <div class="icon">🔎</div>
+
+                <div class="wander-content">
+
+                    <h2>Wander</h2>
+
+                    <p class="description">
+                        A personalized word search game designed around the
+                        words and topics you enjoy.
+                    </p>
+
+                </div>
+
+                <a class="button"
+                   href="https://shamikasireddy.github.io/wander/">
                     Play Wander →
                 </a>
+
             </div>
 
         </main>
 
         <footer>
-            Built with HTML, CSS, and JavaScript · Hosted on GitHub Pages
+            Built with HTML · Hosted on GitHub Pages
         </footer>
 
     </div>
