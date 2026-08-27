@@ -24,18 +24,19 @@
             overflow-x: hidden;
             position: relative;
 
+            /* Soft blue sky background so the clouds stand out */
             background:
                 radial-gradient(
                     circle at 50% 5%,
-                    rgba(255, 218, 83, 0.52),
-                    rgba(255, 232, 133, 0.25) 18%,
-                    transparent 43%
+                    rgba(255, 218, 83, 0.55),
+                    rgba(255, 232, 133, 0.20) 20%,
+                    transparent 45%
                 ),
                 linear-gradient(
                     180deg,
-                    #fffdf7 0%,
-                    #ffffff 48%,
-                    #fffdf8 100%
+                    #b9d0df 0%,
+                    #c9dce7 48%,
+                    #b7cfdd 100%
                 );
         }
 
@@ -90,17 +91,19 @@
             width: 270px;
             height: 82px;
 
-            background: rgba(255, 255, 255, 0.90);
+            /* Brighter clouds against the blue sky */
+            background: rgba(255, 255, 255, 0.96);
 
             border-radius: 100px;
 
-            filter: blur(4px);
+            /* Slightly less blur for clearer cloud shapes */
+            filter: blur(2px);
 
             box-shadow:
-                55px 4px 0 rgba(255, 255, 255, 0.86),
-                105px -25px 0 rgba(255, 255, 255, 0.88),
-                160px 2px 0 rgba(255, 255, 255, 0.78),
-                205px 12px 0 rgba(255, 255, 255, 0.70);
+                55px 4px 0 rgba(255, 255, 255, 0.92),
+                105px -25px 0 rgba(255, 255, 255, 0.94),
+                160px 2px 0 rgba(255, 255, 255, 0.88),
+                205px 12px 0 rgba(255, 255, 255, 0.82);
         }
 
         /* Large upper-left cloud */
@@ -158,14 +161,14 @@
 
             transform: scale(0.75);
 
-            opacity: 0.62;
+            opacity: 0.72;
 
-            filter: blur(5px);
+            filter: blur(3px);
 
             box-shadow:
-                45px 3px 0 rgba(255, 255, 255, 0.60),
-                90px -18px 0 rgba(255, 255, 255, 0.65),
-                135px 4px 0 rgba(255, 255, 255, 0.55);
+                45px 3px 0 rgba(255, 255, 255, 0.70),
+                90px -18px 0 rgba(255, 255, 255, 0.74),
+                135px 4px 0 rgba(255, 255, 255, 0.66);
         }
 
         /* =================================================
@@ -348,11 +351,6 @@
         }
 
         h1 {
-            /*
-             * Rounded, soft "jelly" style.
-             * Arial Rounded is used when available,
-             * with Trebuchet as a friendly fallback.
-             */
             font-family:
                 "Arial Rounded MT Bold",
                 "Trebuchet MS",
@@ -378,7 +376,7 @@
         .subtitle {
             font-size: 18px;
 
-            color: #8fa1ae;
+            color: #687f91;
         }
 
         /* =================================================
@@ -699,7 +697,7 @@
 
             margin-top: 55px;
 
-            color: #a0adb7;
+            color: #718795;
 
             font-size: 14px;
         }
